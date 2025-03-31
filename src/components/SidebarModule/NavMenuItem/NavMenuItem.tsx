@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import { useRouter } from "next/router";
 import { ElementType } from "react";
 
 type NavItemChild = {

@@ -1,28 +1,12 @@
 import NotificationManager from "@/components/HeaderModule/NotificationManager/NotificationManager";
 import ProfileHeaderManager from "@/components/HeaderModule/ProfileHeaderManager/ProfileHeaderManager";
 import { useAppDispatch } from "@/hooks/redux/useAppDispatch";
-import {
-  toggleSidebar,
-  toggleThemeMode,
-} from "@/redux-toolkit/slices/projectSlice";
+import { toggleSidebar } from "@/redux-toolkit/slices/projectSlice";
 import { CircleChevronRight } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useState } from "react";
 
 const DashboardHeader = () => {
   const dispatch = useAppDispatch();
-  const { setTheme } = useTheme();
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const [isNotificationMenuOpen, setIsNotificationMenuOpen] = useState(false);
 
-  const toggleUserMenu = () => setIsUserMenuOpen(!isUserMenuOpen);
-  const toggleNotificationMenu = () =>
-    setIsNotificationMenuOpen(!isNotificationMenuOpen);
-
-  const handleThemeSwitch = (mode: "light" | "dark" | "system") => {
-    setTheme(mode);
-    dispatch(toggleThemeMode(mode));
-  };
   return (
     <header className="h-16 border-b border-gray-200 dark:border-gray-800 flex items-center px-4 lg:px-6 bg-white dark:bg-gray-800 shadow-sm">
       <button
